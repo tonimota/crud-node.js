@@ -9,6 +9,10 @@ const router = express.Router();
 
 // Conexão
 mongoose.connect('mongodb://tonielton:toni123@ds233061.mlab.com:33061/node-store')
+
+//Models
+const Product = require('./models/products')
+
 // Rotas
 const index = require('./routes/index');
 const produtcs = require('./routes/products');
