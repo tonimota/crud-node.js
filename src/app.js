@@ -1,14 +1,20 @@
 'use strict'
 
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const dotenv = require('dotenv').config();
 
 const app = express();
 const router = express.Router();
 
+const host = process.env.DB_HOST;
+const username = process.env.DB_USER;
+const pass = process.env.DB_PASS;
+
 // Conexão
-mongoose.connect('mongodb://tonielton:toni123@ds233061.mlab.com:33061/node-store')
+mongoose.connect(`mongodb://${username}:${pass}@ds233061.mlab.com:33061/${host}`)
 
 //Models
 const Product = require('./models/products')
